@@ -1,0 +1,26 @@
+<!-- <mat-sidenav-container>
+    <mat-sidenav-content>
+         TODO: Implement actual content -->
+    <!-- </mat-sidenav-content>
+    <mat-sidenav mode="over" position="end" disableClose="true">
+        <router-outlet name="side"></router-outlet>
+    </mat-sidenav>
+</mat-sidenav-container>  -->
+<h1>hello</h1>
+<!-- <a [routerLink]="['/tasks', {outlets: {side: ['create']}}]" mat-fab>
+    <mat-icon>add</mat-icon>
+  </a> -->
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+     <h1>Task list content</h1>
+      <a [routerLink]="['/tasks', {outlets: {side: ['create']}}]" mat-fab>
+        <mat-icon>add</mat-icon>
+      </a>
+    </mat-sidenav-content>
+    <mat-sidenav mode="over" [opened]="openSidebar" position="end" disableClose="false">
+      <router-outlet name="side" (activate)="openSidebar = true" (deactivate)="openSidebar = false"></router-outlet>
+    </mat-sidenav>
+    <!-- <mat-sidenav mode="over" position="end" disableClose="true">
+      <router-outlet name="side"></router-outlet>
+    </mat-sidenav> -->
+  </mat-sidenav-container>
